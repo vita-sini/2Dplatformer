@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemy;
+    [SerializeField] private Coin _coin;
     [SerializeField] private float _timeBetweenSpawn;
     [SerializeField] private Transform[] _spawnPoints;
 
@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
         {
             int spawnPointNumber = Random.Range(0,_spawnPoints.Length);
 
-            Enemy enemy = Instantiate(_enemy, _spawnPoints[spawnPointNumber].transform.position, Quaternion.identity);
+            Coin coin = Instantiate(_coin, _spawnPoints[spawnPointNumber].transform.position, Quaternion.identity);
 
             yield return waitForSeconds;
         }
